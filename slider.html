@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider with Real-Time Value Display</title>
+    <style>
+        .slider-container {
+            width: 90%;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .slider {
+            width: 100%;
+        }
+
+        .value-display {
+            margin-top: 10px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slider-container">
+    <input type="range" min="500000" max="2000000" step="10000" value="1000000" class="slider" id="mySlider">
+    <div class="value-display" id="sliderValue">1000000</div>
+</div>
+
+<script>
+    const slider = document.getElementById('mySlider');
+    const sliderValue = document.getElementById('sliderValue');
+
+    slider.addEventListener('input', function() {
+        sliderValue.textContent = this.value;
+    });
+</script>
+
+</body>
+</html>
